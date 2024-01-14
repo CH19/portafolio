@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import type { Proyect, MouseOpacity } from '../types'
 import { clieckd } from '../services/mouse'
+import appGDButtons from './appGDButtons.vue';
 const { proyect } = defineProps<{
     proyect: Proyect
 }>();
@@ -10,14 +11,14 @@ const mouseOpacity = ref<MouseOpacity>({
     icons: 0,
     fondo: 0,
 });
-const { proyectDescription, proyectName, proyectImage, proyectTecnologies } = proyect;
+const { proyectDescription, proyectName, proyectImage, proyectTecnologies, proyectDeploy } = proyect;
 const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
 </script>
 <template>
     <div v-cloak="true" class="v-proyects">
         <h3>{{ proyectName }}</h3>
         <figure @mouseleave="clieckd(mouseOpacity, { valFondo: 0, valIcons: 0 })"
-            @mouseover="clieckd(mouseOpacity, { valFondo: .5, valIcons: 1 })">
+            @mouseover="clieckd(mouseOpacity, { valFondo: .8, valIcons: 1 })">
             <img :src="proyectImage" alt="">
             <div class="icons-container"></div>
             <div class="icons-containe">
@@ -29,6 +30,7 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
         <div>
             <p>{{ proyectDescription }}</p>
         </div>
+        <appGDButtons data-deploid="holi" :data-git-hub="proyectDeploy" />
     </div>
 </template>
 <style scoped>
@@ -65,6 +67,7 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
             width: 150px;
             height: 150px;
             object-fit: cover;
+            border: 1px solid var(--vt-black);
         }
     }
 
@@ -80,8 +83,8 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
     justify-content: end;
     align-items: end;
     width: 100%;
-    height: 100%;
-    background-color: black;
+    height: 98%;
+    background-color: var(--vt-black);
     z-index: 1;
     opacity: v-bind(mouseOpacity.fondo);
 }
