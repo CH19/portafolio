@@ -58,7 +58,8 @@
   margin: 0;
   font-weight: normal;
 }
-body, a{
+body,
+a {
   color: var(--color-text);
 }
 body {

@@ -5,24 +5,26 @@ const optionsNav = ['Sobre mi', 'Proyectos', 'Habilidades', 'Contacto']
   <header>
     <nav>
       <ul>
-        <li v-for="op of optionsNav"><a :href="`#${op.toLowerCase()}`">{{ op }}</a></li>
+        <li v-for="op of optionsNav">
+          <a :href="`#${op.toLowerCase()}`">{{ op }}</a>
+        </li>
       </ul>
     </nav>
   </header>
 </template>
 <style scoped>
-    ul{
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-        place-content: center;
-        gap: .2rem;
-        cursor: pointer;
-        & li{
-            text-align: center;
-            & a{
-                text-decoration: none;
-            }
-        }
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  place-content: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  & li {
+    text-align: center;
+    & a {
+      text-decoration: none;
     }
+  }
+}
 </style>

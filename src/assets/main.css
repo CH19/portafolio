@@ -1,15 +1,15 @@
 @import './base.css';
 
-body{
+body {
   display: flex;
   justify-content: center;
 }
-#app{
+#app {
   max-width: 800px;
   margin: 0;
   padding: 0;
 }
-dialog::backdrop{
+dialog::backdrop {
   background-color: var(--vt-black);
   width: 30px;
 }
