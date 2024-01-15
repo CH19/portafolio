@@ -22,14 +22,15 @@
        ]
     },
     {
-    "proyectName":"Store app",
-    "proyectImage":"https://ibb.co/J2m46Cp",
-    "proyectDescription":"Un buscador de usuarios de Github hecho con vue y otras tecnologias",
-    "proyectDeploy":"htts://github.com/CH19/github_search",
+    "proyectName":"Tesla Clone",
+    "proyectImage":"https://i.ibb.co/SnGNmRB/Tesla-page.png",
+    "proyectDescription":"Un clon hecho con react y tailwind css de la pagina de tesla donde aprendi diversas habilidades",
+    "proyectDeploy":"https://github.com/CH19/tesla-page",
     "proyectTecnologies":[
-       "vi-file-type-css",
+       "vi-file-type-tailwind",
        "vi-file-type-html",
-       "vi-file-type-vue"
+       "vi-file-type-reactjs",
+       "vi-file-type-css"
     ]
  }
  ]

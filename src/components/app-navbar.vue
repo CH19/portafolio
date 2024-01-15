@@ -5,7 +5,7 @@ const optionsNav = ['Sobre mi', 'Proyectos', 'Habilidades', 'Contacto']
   <header>
     <nav>
       <ul>
-        <li v-for="op of optionsNav"><a href="">{{ op }}</a></li>
+        <li v-for="op of optionsNav"><a :href="`#${op.toLowerCase()}`">{{ op }}</a></li>
       </ul>
     </nav>
   </header>

@@ -1,14 +1,15 @@
 <script lang="ts" setup>
 import appGDButtons from './appGDButtons.vue'
+import {userLinkedin} from '../services/data'
 </script>
 <template>
-    <div id="Sobre mi" v-cloak="true" class="me">
+    <div id="sobre mi" v-cloak="true" class="me">
         <figure class="me-porfile">
             <img v-cloak="true" src="../assets/Chris.avif" alt="Christian">
         </figure>
         <div class="me-presentation">
             <p>Mi nombre es Christian La Cruz, soy un programador <strong>frontend</strong>, estudiante de economia e ingenieria en inteligencia artificial apasionado en generar propuestas para construir un futuro mejor</p>
-            <appGDButtons data-git-hub="https://github.com/CH19" />
+            <appGDButtons :data-linkedin="userLinkedin" data-git-hub="https://github.com/CH19" />
         </div>
     </div>
 </template>

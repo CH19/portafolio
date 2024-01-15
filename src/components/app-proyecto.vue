@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, } from 'vue';
 import type { Proyect, MouseOpacity } from '../types'
 import { clieckd } from '../services/mouse'
 import appGDButtons from './appGDButtons.vue';
@@ -11,10 +11,12 @@ const mouseOpacity = ref<MouseOpacity>({
     icons: 0,
     fondo: 0,
 });
+const endWord = (str: string) => {const shortstr =str.split('-'); return shortstr[shortstr.length -1]}
 const { proyectDescription, proyectName, proyectImage, proyectTecnologies, proyectDeploy } = proyect;
 const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
 </script>
 <template>
+    
     <div v-cloak="true" class="v-proyects">
         <h3>{{ proyectName }}</h3>
         <figure @mouseleave="clieckd(mouseOpacity, { valFondo: 0, valIcons: 0 })"
@@ -23,7 +25,7 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
             <div class="icons-container"></div>
             <div class="icons-containe">
                 <div class="icons-items">
-                    <v-icon v-for="tec of techAll" :key="tec" :name="tec"></v-icon>
+                    <v-icon :title="endWord(tec)"  scale="1.5" v-for="tec of techAll" :key="tec" :name="tec"></v-icon>
                 </div>
             </div>
         </figure>
@@ -68,11 +70,18 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
             height: 150px;
             object-fit: cover;
             border: 1px solid var(--vt-black);
+            border-radius: 20px;
         }
     }
 
     & div>p {
         font-size: .8rem;
+        margin: 0 1rem;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 
@@ -86,6 +95,7 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
     height: 98%;
     background-color: var(--vt-black);
     z-index: 1;
+    border-radius: 20px;
     opacity: v-bind(mouseOpacity.fondo);
 }
 
@@ -104,4 +114,9 @@ const techAll = proyectTecnologies.sort((a, b) => a.localeCompare(b));
     &:hover{
         opacity: 1;
     }
-}</style>
+}
+.ModalThing{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+</style>

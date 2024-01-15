@@ -2,6 +2,7 @@
 import appNavbar from './components/app-navbar.vue'
 import appMe from './components/app-me.vue';
 import appProyectos from './components/app-proyectos.vue';
+
 </script>
 
 <template>
